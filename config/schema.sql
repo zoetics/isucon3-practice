@@ -8,6 +8,9 @@ CREATE TABLE `memos` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+alter table memos
+add index is_private(is_private),
+add index `user`(`user`);
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
